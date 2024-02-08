@@ -16,6 +16,10 @@ def index1():
 def index2():
     return render_template('index.html')
 
+@app.route('/image_mars')
+def mars():
+    return render_template('index1.html')
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
