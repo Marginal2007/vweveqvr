@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from flask import request
 app = Flask(__name__)
 
 
@@ -26,6 +26,15 @@ def mars():
 @app.route('/promotion_image')
 def promotion():
     return render_template('index2.html')
+
+
+@app.route('/austranaut_selection', methods=['GET', 'POST'])
+def austranaut_method():
+    if request.method == 'GET':
+        return render_template('index4.html')
+    elif request.method == 'POST':
+        print(request.form['surname'])
+        return render_template('index4.html')
 
 
 if __name__ == '__main__':
