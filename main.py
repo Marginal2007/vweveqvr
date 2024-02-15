@@ -3,17 +3,17 @@ from flask import request
 app = Flask(__name__)
 
 
+@app.route('/<title>')
+def index(title):
+    return render_template('page.html', title=title)
+
+
+@app.route('/index/<title>')
+def index1(title):
+    return render_template('page.html', title=title)
+
+
 @app.route('/')
-def index():
-    return 'Миссия колонизации Марса'
-
-
-@app.route('/index')
-def index1():
-    return 'И на Марсе будут яблони цвести!'
-
-
-@app.route('/promotion')
 def index2():
     return render_template('index.html')
 
