@@ -13,9 +13,9 @@ def index1(title):
     return render_template('page.html', title=title)
 
 
-@app.route('/')
-def index2():
-    return render_template('index.html')
+@app.route('/training/<prof>')
+def index2(prof):
+    return render_template('page.html', prof=prof)
 
 
 @app.route('/image_mars')

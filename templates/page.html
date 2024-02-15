@@ -2,4 +2,9 @@
 
 {% block content %}
 <h4>И на Марсе будут яблоки цвести</h4>
+{% if 'инженер' in prof or 'строитель' in prof %}
+    <img src="{{url_for('static', filename='ing.webp')}}">
+{% else %}
+    <img src="{{url_for('static', filename='sci.webp')}}">
+{%endif%}
 {% endblock %}
