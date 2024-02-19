@@ -28,12 +28,19 @@ def promotion():
     return render_template('index2.html')
 
 
-@app.route('/austranaut_selection', methods=['GET', 'POST'])
-def austranaut_method():
+@app.route('/astronaut_selection', methods=['GET', 'POST'])
+def astronaut_method():
     if request.method == 'GET':
         return render_template('index4.html')
     elif request.method == 'POST':
         print(request.form['surname'])
+        print(request.form['name'])
+        print(request.form['email'])
+        print(request.form['education'])
+        print(request.form['profession'])
+        print(request.form['gender'])
+        print(request.form['motivation'])
+        print(request.form['stay_on_mars'])
         return render_template('index4.html')
 
 
